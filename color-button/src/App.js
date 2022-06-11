@@ -10,19 +10,23 @@ function App() {
   };
   const toggleDisable = (e) => {
     setIsChecked(e.target.checked);
-  }
+  };
 
   return (
     <div>
       <button
-        style={{ backgroundColor: buttonColor, color: "white" }}
+        style={{
+          backgroundColor: isChecked ? "grey" : buttonColor,
+          color: "white",
+        }}
         onClick={handleChange}
         disabled={isChecked}
       >
         Change to {newButtonColor}
       </button>
       <br />
-      <input type="checkbox" name="" id="cb1" onChange={toggleDisable}/>
+      <input type="checkbox" name="" id="cb1" onChange={toggleDisable} />
+      <label htmlFor="cb1"> Disable Button</label>
     </div>
   );
 }
