@@ -6,8 +6,9 @@ export const replaceCamelWithSpaces = (colorName) => {
 };
 
 function App() {
-  const [buttonColor, setButtonColor] = useState("red");
-  const newButtonColor = buttonColor === "red" ? "blue" : "red";
+  const [buttonColor, setButtonColor] = useState("MediumVioletRed");
+  const newButtonColor =
+    buttonColor === "MediumVioletRed" ? "MidnightBlue" : "MediumVioletRed";
   const [isChecked, setIsChecked] = useState(false);
   const handleChange = () => {
     setButtonColor(newButtonColor);
@@ -26,7 +27,7 @@ function App() {
         onClick={handleChange}
         disabled={isChecked}
       >
-        Change to {newButtonColor}
+        Change to {replaceCamelWithSpaces(newButtonColor)}
       </button>
       <br />
       <input type="checkbox" name="" id="cb1" onChange={toggleDisable} />
